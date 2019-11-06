@@ -13,13 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 public class Patient {
     private int id;
-    private String name;
-    private String surname;
+    private String firstName;
     private String middleName;
+    private String lastName;
     private String phoneNumber;
     private String address;
     private String mail;
     private Date birthDate;
-
     private List<Doctor> doctors = new ArrayList<>();
 }

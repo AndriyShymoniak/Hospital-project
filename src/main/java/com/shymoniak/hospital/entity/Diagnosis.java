@@ -16,8 +16,8 @@ public class Diagnosis {
     private String name;
     private String description;
     private Date diagnosisDate;
-
     private Doctor doctor;
     private Patient patient;
+    private Feedback feedback;
     private List<Medicine> medicines = new ArrayList<>();
 }

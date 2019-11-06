@@ -15,6 +15,5 @@ public class Medicine {
     private int price;
     private String name;
     private String description;
-
     private List<Medicine> analogMedicineId = new ArrayList<>();
 }
