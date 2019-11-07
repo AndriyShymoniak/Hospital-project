@@ -1,4 +1,4 @@
-package com.shymoniak.hospital.enums;
+package com.shymoniak.hospital.entity.enums;
 
 import lombok.Getter;
 

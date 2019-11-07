@@ -1,4 +1,4 @@
-package com.shymoniak.hospital.entity;
+package com.shymoniak.hospital.entity.embeddableclasses;
 
 import lombok.*;
 

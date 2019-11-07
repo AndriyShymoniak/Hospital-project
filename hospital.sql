@@ -33,7 +33,7 @@ CREATE TABLE medicine (
 	medicine_name VARCHAR(30),
 	price INT,
 	description TEXT,
-	doctor_id INT
+	diagnosis_id INT
 );
 
 CREATE TABLE diagnosis (

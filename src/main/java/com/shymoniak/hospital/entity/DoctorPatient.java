@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.entity;
 
+import com.shymoniak.hospital.entity.embeddableclasses.DoctorPatientId;
 import lombok.*;
 
 import javax.persistence.*;

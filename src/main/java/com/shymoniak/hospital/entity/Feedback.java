@@ -1,6 +1,6 @@
 package com.shymoniak.hospital.entity;
 
-import com.shymoniak.hospital.enums.FeedbackQuality;
+import com.shymoniak.hospital.entity.enums.FeedbackQuality;
 import lombok.*;
 
 import javax.persistence.*;
