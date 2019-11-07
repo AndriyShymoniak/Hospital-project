@@ -1,17 +1,12 @@
 package com.shymoniak.hospital.service;
 
+import com.shymoniak.hospital.domain.DiagnosisDTO;
+
+import java.util.List;
+
 public interface DiagnosisService {
 
-    /*
-    void AddCountry(CountryDTO countryDTO);
-
-void DeleteCountry(Long id);
-
-
-List<CountryDTO> ShowAllCountries();
-
-CountryDTO ShowCountryById(Long id);
-
-
-     */
+    void addDiagnosis(DiagnosisDTO diagnosisDTO);
+    void deleteDiagnosis(Long id);
+    List<DiagnosisDTO> showAllDiagnosis();
 }
