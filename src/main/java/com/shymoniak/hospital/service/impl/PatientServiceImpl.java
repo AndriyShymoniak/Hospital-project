@@ -30,8 +30,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<PatientDTO> showAllPatients() {
-        List<Patient> patientList = patientRepository.findAll();
-        List<PatientDTO> patientDTOList = modelMapper.mapAll(patientList, PatientDTO.class);
+        List<PatientDTO> patientDTOList = modelMapper.mapAll(patientRepository.findAll(), PatientDTO.class);
         return patientDTOList;
     }
 }

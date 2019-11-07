@@ -29,8 +29,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 
     @Override
     public List<FeedbackDTO> showAllFeedbacks() {
-        List<Feedback> feedbackList = feedbackRepository.findAll();
-        List<FeedbackDTO> feedbackDTOList = modelMapper.mapAll(feedbackList, FeedbackDTO.class);
+        List<FeedbackDTO> feedbackDTOList = modelMapper.mapAll(feedbackRepository.findAll(), FeedbackDTO.class);
         return feedbackDTOList;
     }
 }

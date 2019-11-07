@@ -33,8 +33,7 @@ public class DoctorServiceImpl implements DoctorService{
 
     @Override
     public List<DoctorDTO> showAllDoctors() {
-        List<Doctor> doctorList = doctorRepository.findAll();
-        List<DoctorDTO> doctorDTOList = modelMapper.mapAll(doctorList, DoctorDTO.class);
+        List<DoctorDTO> doctorDTOList = modelMapper.mapAll(doctorRepository.findAll(), DoctorDTO.class);
         return doctorDTOList;
     }
 }

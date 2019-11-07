@@ -31,8 +31,7 @@ public class MedicineServiceImp implements MedicineService {
 
     @Override
     public List<MedicineDTO> showAllMedicines() {
-        List<Medicine> medicineList = medicineRepository.findAll();
-        List<MedicineDTO> medicineDTOList = modelMapper.mapAll(medicineList, MedicineDTO.class);
+        List<MedicineDTO> medicineDTOList = modelMapper.mapAll(medicineRepository.findAll(), MedicineDTO.class);
         return medicineDTOList;
     }
 }

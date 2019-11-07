@@ -31,8 +31,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
 
     @Override
     public List<DiagnosisDTO> showAllDiagnosis() {
-        List<Diagnosis> diagnosisList = diagnosisRepository.findAll();
-        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisList, DiagnosisDTO.class);
+        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findAll(), DiagnosisDTO.class);
         return diagnosisDTOList;
     }
 }
