@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.entity;
 
+import com.shymoniak.hospital.enums.FeedbackQuality;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "feedback_id", nullable = false)
-    private int feedbackId;
+    private long feedbackId;
 
     @Column(name = "feedback_comment")
     private String comment;

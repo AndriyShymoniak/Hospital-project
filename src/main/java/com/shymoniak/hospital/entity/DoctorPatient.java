@@ -15,7 +15,7 @@ public class DoctorPatient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "doctor_patient_id", nullable = false)
-    private int doctorPatientId;
+    private long doctorPatientId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Patient patient;
