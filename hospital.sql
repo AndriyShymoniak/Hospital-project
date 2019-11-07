@@ -5,31 +5,31 @@ USE hospital_project;
 
 #DROP TABLE IF EXISTS doctor;
 CREATE TABLE doctor (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	first_name VARCHAR(30),
-	middle_name VARCHAR(30),
-	last_name VARCHAR(30),
+	doctor_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	first_name VARCHAR(30) NOT NULL,
+	middle_name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(30) NOT NULL,
 	phone_number VARCHAR(13),
-	mail VARCHAR(100),
-	speciality VARCHAR(100),
+	email_address VARCHAR(100),
+	speciality VARCHAR(100) NOT NULL,
 	birth_date DATE,
 	patient_id INT
 );
 
 CREATE TABLE patient (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	patient_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	first_name VARCHAR(30),
 	middle_name VARCHAR(30),
 	last_name VARCHAR(30),
 	phone_number VARCHAR(13),
-	mail VARCHAR(100),
+	email_address VARCHAR(100),
 	address VARCHAR(100),
 	birth_date DATE,
 	doctor_id INT
 );
 
 CREATE TABLE medicine (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	medicine_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	medicine_name VARCHAR(30),
 	price INT,
 	description TEXT,
@@ -37,9 +37,9 @@ CREATE TABLE medicine (
 );
 
 CREATE TABLE diagnosis (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	diagnosis_name VARCHAR(30),
-    daignosis_date DATE,
+	diagnosis_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	diagnosis_name VARCHAR(100) NOT NULL,
+    diagnosis_date DATE NOT NULL,
 	description TEXT,
 	medicine_id INT,
 	doctor_id INT,
@@ -48,26 +48,18 @@ CREATE TABLE diagnosis (
 );
 
 CREATE TABLE doctor_patient (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	doctor_patient_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	patient_id INT,
 	doctor_id INT
 );
 
 CREATE TABLE feedback (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	feedback_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	quality VARCHAR(20),
 	feedback_comment TEXT,
     feedback_date DATE
 );
 
-#public class Diagnosis {
-#    private int id;
-#    private String name;
-#    private String description;
-#    private Date diagnosisDate;
 
-#    private Doctor doctor;
-#    private Patient patient;
-#    private List<Medicine> medicines = new ArrayList<>();
 
 
