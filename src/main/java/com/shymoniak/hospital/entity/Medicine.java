@@ -28,7 +28,16 @@ public class Medicine {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "diagnosis_id")
+    private Diagnosis diagnosis;
+
+    /**
+     * Цей список має видавати ліки аналоги
+     */
+    /*
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "medicineId")
+    @JoinColumn(name = "medicine_id")
     private List<Medicine> analogMedicineId = new ArrayList<>();
+    */
 }

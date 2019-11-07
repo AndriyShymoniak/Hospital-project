@@ -30,19 +30,18 @@ public class Diagnosis {
     private Date diagnosisDate;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "doctorId")
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     private Doctor doctor;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "patientId")
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     private Patient patient;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "feedbackId")
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     private Feedback feedback;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "medicineId")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "diagnosis")
     private List<Medicine> medicines = new ArrayList<>();
 }

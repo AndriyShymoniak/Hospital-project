@@ -41,7 +41,10 @@ public class Patient {
     @Column(name = "birth_date")
     private Date birthDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "doctor")
+    @OneToMany(
+            mappedBy = "doctor",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<DoctorPatient> doctors = new ArrayList<>();
 }
