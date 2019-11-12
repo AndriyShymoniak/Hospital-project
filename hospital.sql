@@ -61,6 +61,50 @@ CREATE TABLE feedback (
     feedback_date DATE
 );
 
+INSERT INTO doctor(doctor_id, first_name, middle_name, last_name , phone_number, email_address, speciality, birth_date, patient_id)
+VALUES(
+(1, 'DocName1','DocMidName1', 'DocLastName1', '+380985559934', 'mail@mail.com', 'dantist', 2000-08-27, 1),
+(2, 'DocName2','DocMidName2', 'DocLastName2', '+380985559934', 'mail@mail.com', 'dantist', 2000-08-27, 2),
+(3, 'DocName3','DocMidName3', 'DocLastName3', '+380985559934', 'mail@mail.com', 'dantist', 2000-08-27, 3),
+(4, 'DocName4','DocMidName4', 'DocLastName4', '+380985559934', 'mail@mail.com', 'dantist', 2000-08-27, 4),
+(5, 'DocName5','DocMidName5', 'DocLastName5', '+380985559934', 'mail@mail.com', 'dantist', 2000-08-27, 5)
+);
+
+INSERT INTO patient(first_name, middle_name, last_name , phone_number, email_address, address, birth_date, doctor_id)
+VALUES(
+('PatName1','PatMidName1', 'PatLastName1', '+380985559934', 'mail@mail.com', 'Lviv Lychakivska 228', 2000-08-27, 1),
+('PatName2','PatMidName2', 'PatLastName2', '+380985559934', 'mail@mail.com', 'Lviv Lychakivska 228', 2000-08-27, 2),
+('PatName3','PatMidName3', 'PatLastName3', '+380985559934', 'mail@mail.com', 'Lviv Lychakivska 228', 2000-08-27, 3),
+('PatName4','PatMidName4', 'PatLastName4', '+380985559934', 'mail@mail.com', 'Lviv Lychakivska 228', 2000-08-27, 4),
+('PatName5','PatMidName5', 'PatLastName5', '+380985559934', 'mail@mail.com', 'Lviv Lychakivska 228', 2000-08-27, 5)
+);
+
+INSERT INTO medicine(medicine_name, price, description , diagnosis_id)
+VALUES(
+('MedName1', 1000, 'description description, descriptrion', 1),
+('MedName2', 1000, 'description description, descriptrion', 2),
+('MedName3', 1000, 'description description, descriptrion', 3),
+('MedName4', 1000, 'description description, descriptrion', 4),
+('MedName5', 1000, 'description description, descriptrion', 5)
+);
+
+INSERT INTO diagnosis(diagnosis_name, diagnosis_date, description, medicine_id, doctor_id, patient_id, feedback_id)
+VALUES(
+('DiagName1', 2019-07-12, 'description description description', 1, 1, 1, 1),
+('DiagName2', 2019-07-12, 'description description description', 2, 2, 2, 2),
+('DiagName3', 2019-07-12, 'description description description', 3, 3, 3, 3),
+('DiagName4', 2019-07-12, 'description description description', 4, 4, 4, 4),
+('DiagName5', 2019-07-12, 'description description description', 5, 5, 5, 5)
+);
+
+INSERT INTO feedback(quality, feedback_comment, feedback_date)
+ VALUES(
+('GOOD', 'feedback comment feedback comment feedback comment ', 2017-06-1),
+('GOOD', 'feedback comment feedback comment feedback comment ', 2017-06-2),
+('GOOD', 'feedback comment feedback comment feedback comment ', 2017-06-3),
+('GOOD', 'feedback comment feedback comment feedback comment ', 2017-06-4),
+('GOOD', 'feedback comment feedback comment feedback comment ', 2017-06-5)
+);
 
 
 
