@@ -13,19 +13,21 @@ import javax.persistence.*;
 @Entity
 @Table(name = "doctor_patient")
 public class DoctorPatient {
-//    @Id
+    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "doctor_patient_id", nullable = false)
-//    private long doctorPatientId;
+    private long doctorPatientId;
 
-    @EmbeddedId
-    private DoctorPatientId id;
+//    @EmbeddedId
+//    private DoctorPatientId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("patientId")
+    @JoinColumn(name = "patient_id")
+//    @MapsId("patientId")
     private Patient patient;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("doctorId")
+    @JoinColumn(name = "doctor_id")
+//    @MapsId("doctorId")
     private Doctor doctor;
 }
