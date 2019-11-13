@@ -16,7 +16,7 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping({"", "/"})
-    ResponseEntity<List<PatientDTO>> showAllDoctors(){
+    ResponseEntity<List<PatientDTO>> showAllPatients(){
         return new ResponseEntity<>(patientService.showAllPatients(), HttpStatus.OK);
     }
 

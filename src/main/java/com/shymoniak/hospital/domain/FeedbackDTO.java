@@ -18,5 +18,5 @@ public class FeedbackDTO {
     private Date date;
     // TODO: 07.11.2019
     //REMAKE!
-    private FeedbackQuality quality;
+//    private FeedbackQuality quality;
 }

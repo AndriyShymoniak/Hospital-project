@@ -102,11 +102,17 @@ VALUES
 ;
 
 INSERT INTO 
-feedback(quality, feedback_comment, feedback_date)
+#feedback(quality, feedback_comment, feedback_date)
+feedback(feedback_comment, feedback_date)
 VALUES
-	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-1'),
-	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-2'),
-	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-3'),
-	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-4'),
-	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-5')
+#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-1'),
+#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-2'),
+#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-3'),
+#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-4'),
+#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-5')
+    ("feedback comment feedback comment feedback comment ", '2017-06-1'),
+	("feedback comment feedback comment feedback comment ", '2017-06-2'),
+	("feedback comment feedback comment feedback comment ", '2017-06-3'),
+	("feedback comment feedback comment feedback comment ", '2017-06-4'),
+	("feedback comment feedback comment feedback comment ", '2017-06-5')
 ;

@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,8 +21,12 @@ public class DiagnosisDTO {
     private String description;
     private Date diagnosisDate;
 
+//    @JsonIgnore
     private DoctorDTO doctor;
+//    @JsonIgnore
     private PatientDTO patient;
+//    @JsonIgnore
     private FeedbackDTO feedback;
+    @JsonIgnore
     private List<MedicineDTO> medicines;
 }

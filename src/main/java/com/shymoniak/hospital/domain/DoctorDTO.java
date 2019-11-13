@@ -22,5 +22,6 @@ public class DoctorDTO {
     private String speciality;
     private Date birthDate;
 
+
     private List<DoctorPatientDTO> patients;
 }

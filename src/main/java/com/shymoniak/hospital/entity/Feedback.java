@@ -22,9 +22,9 @@ public class Feedback {
     @Column(name = "feedback_comment")
     private String comment;
 
-    @Column(name = "diagnosis_date")
+    @Column(name = "feedback_date")
     private Date date;
 
-    @Column(name = "quality", length = 20)
-    private FeedbackQuality quality;
+//    @Column(name = "quality", length = 20)
+//    private FeedbackQuality quality;
 }
