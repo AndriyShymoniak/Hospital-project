@@ -43,7 +43,7 @@ public class Doctor {
 
     @OneToMany(
             mappedBy = "patient",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.PERSIST,
             orphanRemoval = true
     )
     private List<DoctorPatient> patients = new ArrayList<>();

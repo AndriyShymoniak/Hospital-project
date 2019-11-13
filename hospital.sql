@@ -116,3 +116,13 @@ VALUES
 	("feedback comment feedback comment feedback comment ", '2017-06-4'),
 	("feedback comment feedback comment feedback comment ", '2017-06-5')
 ;
+
+INSERT INTO
+doctor_patient(patient_id, doctor_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5)
+;
