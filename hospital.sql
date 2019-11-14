@@ -85,6 +85,9 @@ INSERT INTO
 medicine(medicine_name, price, description , diagnosis_id)
 VALUES
 	('MedName1', 1000, 'description description, descriptrion', 1),
+	('MedName11', 1000, 'description description, descriptrion', 1),
+	('MedName12', 1000, 'description description, descriptrion', 1),
+	('MedName13', 1000, 'description description, descriptrion', 1),
 	('MedName2', 1000, 'description description, descriptrion', 2),
 	('MedName3', 1000, 'description description, descriptrion', 3),
 	('MedName4', 1000, 'description description, descriptrion', 4),

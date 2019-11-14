@@ -33,4 +33,15 @@ public class PatientServiceImpl implements PatientService {
         List<PatientDTO> patientDTOList = modelMapper.mapAll(patientRepository.findAll(), PatientDTO.class);
         return patientDTOList;
     }
+
+    @Override
+    public List<PatientDTO> showAllPatientsBySurname(String lastName) {
+        List<PatientDTO> patientDTOList = modelMapper.mapAll(patientRepository.findAllByLastNameIgnoreCaseContaining(lastName), PatientDTO.class);
+        return patientDTOList;
+    }
+
+    @Override
+    public PatientDTO findPatientById(Long id) {
+        return modelMapper.map(patientRepository.getOne(id), PatientDTO.class);
+    }
 }

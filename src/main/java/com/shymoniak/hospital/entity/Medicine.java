@@ -17,7 +17,7 @@ public class Medicine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "medicine_id", nullable = false)
-    private long medicineId;
+    private Long medicineId;
 
     @Column(name = "price", nullable = false)
     private int price;
@@ -32,12 +32,10 @@ public class Medicine {
     @JoinColumn(name = "diagnosis_id")
     private Diagnosis diagnosis;
 
-    /**
-     * Цей список має видавати ліки аналоги
-     */
-    /*
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "medicine_id")
-    private List<Medicine> analogMedicineId = new ArrayList<>();
-    */
+    @OneToMany(
+            mappedBy = "diagnosis",
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = true
+    )
+    private List<Medicine> analogMedicine = new ArrayList<>();
 }

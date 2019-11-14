@@ -9,4 +9,6 @@ public interface PatientService {
     void addPatient(PatientDTO patientDTO);
     void deletePatient(Long id);
     List<PatientDTO> showAllPatients();
+    List<PatientDTO> showAllPatientsBySurname(String lastName);
+    PatientDTO findPatientById(Long id);
 }

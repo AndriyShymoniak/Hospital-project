@@ -7,6 +7,7 @@ import java.util.List;
 public interface DiagnosisService {
 
     void addDiagnosis(DiagnosisDTO diagnosisDTO);
-    void deleteDiagnosis(Long id);
+    void changeDiagnosis(DiagnosisDTO diagnosisDTO);
     List<DiagnosisDTO> showAllDiagnosis();
+    void deleteDiagnosis(Long id);
 }

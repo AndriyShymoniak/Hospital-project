@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FeedbackDTO {
-    private long feedbackId;
+    private Long feedbackId;
     private String comment;
     private Date date;
     // TODO: 07.11.2019

@@ -17,7 +17,7 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "feedback_id", nullable = false)
-    private long feedbackId;
+    private Long feedbackId;
 
     @Column(name = "feedback_comment")
     private String comment;

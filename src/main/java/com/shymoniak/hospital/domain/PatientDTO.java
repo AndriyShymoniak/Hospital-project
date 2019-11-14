@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PatientDTO {
-    private long patientId;
+    private Long patientId;
     private String firstName;
     private String middleName;
     private String lastName;

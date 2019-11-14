@@ -9,4 +9,5 @@ public interface MedicineService {
     void addMedicine(MedicineDTO medicineDTO);
     void deleteMedicine(Long id);
     List<MedicineDTO> showAllMedicines();
+    List<MedicineDTO> showAllAnalogMedicines(Long diagnosisId);
 }

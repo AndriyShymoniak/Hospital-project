@@ -16,7 +16,7 @@ import java.util.List;
 public class DiagnosisDTO {
     // TODO: 07.11.2019
     //    @JsonIgnore
-    private long diagnosisId;
+    private Long diagnosisId;
     private String name;
     private String description;
     private Date diagnosisDate;

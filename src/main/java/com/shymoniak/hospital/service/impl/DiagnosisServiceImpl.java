@@ -25,6 +25,11 @@ public class DiagnosisServiceImpl implements DiagnosisService {
     }
 
     @Override
+    public void changeDiagnosis(DiagnosisDTO diagnosisDTO) {
+        diagnosisRepository.save(modelMapper.map(diagnosisDTO, Diagnosis.class));
+    }
+
+    @Override
     public void deleteDiagnosis(Long id) {
         diagnosisRepository.deleteById(id);
     }

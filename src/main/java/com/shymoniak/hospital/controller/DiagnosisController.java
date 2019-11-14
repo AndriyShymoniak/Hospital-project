@@ -26,6 +26,13 @@ public class DiagnosisController {
         diagnosisService.addDiagnosis(diagnosisDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @PutMapping
+    public ResponseEntity<Void> changeDiagnosis(@RequestBody DiagnosisDTO diagnosisDTO) {
+        diagnosisService.changeDiagnosis(diagnosisDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 // TODO: 07.11.2019
 //    @DeleteMapping("/del/{id}")
 //    public ResponseEntity<Void> DeleteDiagnosisById(@PathVariable Long id) {
