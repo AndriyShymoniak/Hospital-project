@@ -10,6 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Для діагнозів за логікою програми поовинні виконуватись наступні функції
+ * - Get all diagnosis              для списку діагнозів
+ * - Get all diagnosis by doctor    для списку діагнозів посортованих за лікарем
+ * - Get all diagnosis by patient   для списку діагнозів посортованих за пацієнтом
+ * - Get diagnosis by ID            для отримання діагнозу за ID
+ * - Add diagnosis                  для можливості додати новий діагноз
+ * - Change diagnosis               для можливості змінювати діагноз
+ */
 @RestController
 @RequestMapping("diagnosis")
 public class DiagnosisController {
@@ -21,11 +30,17 @@ public class DiagnosisController {
         return new ResponseEntity<>(diagnosisService.showAllDiagnosis(), HttpStatus.OK);
     }
 
+    @GetMapping("/id/{id}")
+    ResponseEntity<DiagnosisDTO> findDoctorById(@PathVariable ("id") Long id){
+        return new ResponseEntity<>(diagnosisService.getDiagnosisById(id), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Void> addDiagnosis(@RequestBody DiagnosisDTO diagnosisDTO) {
         diagnosisService.addDiagnosis(diagnosisDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 
     @PutMapping
     public ResponseEntity<Void> changeDiagnosis(@RequestBody DiagnosisDTO diagnosisDTO) {

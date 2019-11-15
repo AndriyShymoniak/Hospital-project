@@ -40,4 +40,9 @@ public class MedicineServiceImp implements MedicineService {
         List<MedicineDTO> medicineDTOList = modelMapper.mapAll(medicineRepository.findAllByDiagnosisDiagnosisId(diagnosisId), MedicineDTO.class);
         return medicineDTOList;
     }
+
+    @Override
+    public MedicineDTO getDiagnosisById(Long id) {
+        return modelMapper.map(medicineRepository.getOne(id), MedicineDTO.class);
+    }
 }

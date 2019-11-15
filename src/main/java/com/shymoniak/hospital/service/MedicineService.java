@@ -10,4 +10,6 @@ public interface MedicineService {
     void deleteMedicine(Long id);
     List<MedicineDTO> showAllMedicines();
     List<MedicineDTO> showAllAnalogMedicines(Long diagnosisId);
+    MedicineDTO getDiagnosisById(Long id);
 }
+

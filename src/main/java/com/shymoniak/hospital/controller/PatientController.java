@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Для пацієнтів за логікою програми поовинні виконуватись наступні функції
+ * - Get all patients                        для отримання списку пацієнтів
+ * - Get all patients by last name           для отримання списку пацієнтів посортованих за прізвищем
+ * - Get patient by ID                       для отримання пацієнта за ID
+ * - Add patient                             для можливості додати нового пацієнта
+ */
 @RestController
 @RequestMapping("patient")
 public class PatientController {

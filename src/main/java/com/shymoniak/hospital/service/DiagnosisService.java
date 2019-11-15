@@ -10,4 +10,5 @@ public interface DiagnosisService {
     void changeDiagnosis(DiagnosisDTO diagnosisDTO);
     List<DiagnosisDTO> showAllDiagnosis();
     void deleteDiagnosis(Long id);
+    DiagnosisDTO getDiagnosisById(Long id);
 }

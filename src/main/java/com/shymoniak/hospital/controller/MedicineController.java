@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Для ліків за логікою програми поовинні виконуватись наступні функції
+ * - Get all medicine                     для отримання списку ліків
+ * - Get all analog medicine              для отримання списку ліків аналогів
+ * - Get medicine by ID                   для отримання ліків за ID
+ * - Add medicine                           для можливості додати нові ліки
+ */
 @RestController
 @RequestMapping("medicine")
 public class MedicineController {

@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Для відгуків за логікою програми поовинні виконуватись наступні функції
+ * - Get all feedbacks by doctor            для списку відгуків посортованим по лікарю
+ * - Get doctor by ID                       для отримання відгука за ID
+ * - Add doctor                             для можливості додати новий відгук
+ */
 @RestController
 @RequestMapping("feedback")
 public class FeedbackController {
@@ -18,6 +24,11 @@ public class FeedbackController {
     @GetMapping({"", "/"})
     ResponseEntity<List<FeedbackDTO>> showAllFeedbacks(){
         return new ResponseEntity<>(feedbackService.showAllFeedbacks(), HttpStatus.OK);
+    }
+
+    @GetMapping("/id/{id}")
+    ResponseEntity<FeedbackDTO> findFeedbackrById(@PathVariable ("id") Long id){
+        return new ResponseEntity<>(feedbackService.getFeedbackById(id), HttpStatus.OK);
     }
 
     @PostMapping

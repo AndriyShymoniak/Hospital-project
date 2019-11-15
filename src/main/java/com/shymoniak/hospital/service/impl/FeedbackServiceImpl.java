@@ -32,4 +32,9 @@ public class FeedbackServiceImpl implements FeedbackService {
         List<FeedbackDTO> feedbackDTOList = modelMapper.mapAll(feedbackRepository.findAll(), FeedbackDTO.class);
         return feedbackDTOList;
     }
+
+    @Override
+    public FeedbackDTO getFeedbackById(Long id) {
+        return modelMapper.map(feedbackRepository.getOne(id), FeedbackDTO.class);
+    }
 }
