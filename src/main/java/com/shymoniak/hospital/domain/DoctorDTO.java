@@ -23,6 +23,5 @@ public class DoctorDTO {
     private String speciality;
     private Date birthDate;
 
-    @JsonIgnore
     private List<DoctorPatientDTO> patients;
 }

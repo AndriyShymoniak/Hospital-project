@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -7,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Getter
 @Setter
 @ToString
 @NoArgsConstructor
@@ -47,4 +47,37 @@ public class Diagnosis {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "diagnosis")
     private List<Medicine> medicines = new ArrayList<>();
+
+    public Long getDiagnosisId() {
+        return diagnosisId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Date getDiagnosisDate() {
+        return diagnosisDate;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public Feedback getFeedback() {
+        return feedback;
+    }
+
+    @JsonManagedReference
+    public List<Medicine> getMedicines() {
+        return medicines;
+    }
 }

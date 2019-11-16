@@ -11,9 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DoctorPatientDTO {
-    // TODO: 07.11.2019
-    // REMAKE!
-//    private DoctorPatientId id;
     private Long id;
 
     private PatientDTO patient;

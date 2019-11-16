@@ -1,12 +1,12 @@
 package com.shymoniak.hospital.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 @Setter
 @ToString
 @NoArgsConstructor
@@ -38,4 +38,29 @@ public class Medicine {
             orphanRemoval = true
     )
     private List<Medicine> analogMedicine = new ArrayList<>();
+
+    public Long getMedicineId() {
+        return medicineId;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    @JsonBackReference
+    public Diagnosis getDiagnosis() {
+        return diagnosis;
+    }
+
+    public List<Medicine> getAnalogMedicine() {
+        return analogMedicine;
+    }
 }

@@ -14,19 +14,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DiagnosisDTO {
-    // TODO: 07.11.2019
-    //    @JsonIgnore
     private Long diagnosisId;
     private String name;
     private String description;
     private Date diagnosisDate;
 
-//    @JsonIgnore
-    private DoctorDTO doctor;
-//    @JsonIgnore
-    private PatientDTO patient;
-//    @JsonIgnore
-    private FeedbackDTO feedback;
     @JsonIgnore
+    private DoctorDTO doctor;
+    @JsonIgnore
+    private PatientDTO patient;
+    private FeedbackDTO feedback;
     private List<MedicineDTO> medicines;
 }

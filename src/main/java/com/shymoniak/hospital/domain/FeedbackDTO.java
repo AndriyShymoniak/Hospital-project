@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.Date;
 
 @Data
@@ -16,7 +18,7 @@ public class FeedbackDTO {
     private Long feedbackId;
     private String comment;
     private Date date;
-    // TODO: 07.11.2019
-    //REMAKE!
-//    private FeedbackQuality quality;
+
+    @Enumerated(EnumType.STRING)
+    private FeedbackQuality quality;
 }
