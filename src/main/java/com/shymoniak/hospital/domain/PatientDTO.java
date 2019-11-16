@@ -23,5 +23,6 @@ public class PatientDTO {
     private String emailAddress;
     private Date birthDate;
 
+    @JsonIgnore
     private List<DoctorPatientDTO> doctors;
 }

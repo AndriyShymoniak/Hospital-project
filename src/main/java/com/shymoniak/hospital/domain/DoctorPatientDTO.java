@@ -1,6 +1,6 @@
 package com.shymoniak.hospital.domain;
 
-import com.shymoniak.hospital.entity.embeddableclasses.DoctorPatientId;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,5 +14,7 @@ public class DoctorPatientDTO {
     private Long id;
 
     private PatientDTO patient;
+
+    @JsonIgnore
     private DoctorDTO doctor;
 }

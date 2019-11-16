@@ -25,6 +25,7 @@ public class Feedback {
     @Column(name = "feedback_date")
     private Date date;
 
-//    @Column(name = "quality", length = 20)
-//    private FeedbackQuality quality;
+    @Column(name = "quality", length = 20)
+    @Enumerated(EnumType.STRING)
+    private FeedbackQuality quality;
 }

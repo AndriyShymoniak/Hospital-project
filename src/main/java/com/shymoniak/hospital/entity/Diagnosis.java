@@ -31,17 +31,14 @@ public class Diagnosis {
 
 
     @OneToOne(fetch = FetchType.LAZY)
-//    @MapsId
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
     @OneToOne(fetch = FetchType.LAZY)
-//    @MapsId
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
     @OneToOne(fetch = FetchType.LAZY)
-//    @MapsId
     @JoinColumn(name = "feedback_id")
     private Feedback feedback;
 

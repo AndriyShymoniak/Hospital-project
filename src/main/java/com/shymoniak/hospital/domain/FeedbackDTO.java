@@ -19,6 +19,5 @@ public class FeedbackDTO {
     private String comment;
     private Date date;
 
-    @Enumerated(EnumType.STRING)
     private FeedbackQuality quality;
 }

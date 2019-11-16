@@ -30,6 +30,7 @@ CREATE TABLE patient (
 
 CREATE TABLE medicine (
 	medicine_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    analog_id INT,
 	medicine_name VARCHAR(30),
 	price INT,
 	description TEXT,
@@ -82,16 +83,16 @@ VALUES
 ;
 
 INSERT INTO 
-medicine(medicine_name, price, description , diagnosis_id)
+medicine(analog_id, medicine_name, price, description , diagnosis_id)
 VALUES
-	('MedName1', 1000, 'description description, descriptrion', 1),
-	('MedName11', 1000, 'description description, descriptrion', 1),
-	('MedName12', 1000, 'description description, descriptrion', 1),
-	('MedName13', 1000, 'description description, descriptrion', 1),
-	('MedName2', 1000, 'description description, descriptrion', 2),
-	('MedName3', 1000, 'description description, descriptrion', 3),
-	('MedName4', 1000, 'description description, descriptrion', 4),
-	('MedName5', 1000, 'description description, descriptrion', 5)
+	(1, 'MedName1', 1000, 'description description, descriptrion', 1),
+	(null, 'MedName11', 1000, 'description description, descriptrion', 1),
+	(null, 'MedName12', 1000, 'description description, descriptrion', 1),
+	(null, 'MedName13', 1000, 'description description, descriptrion', 1),
+	(1, 'MedName2', 1000, 'description description, descriptrion', 2),
+	(1, 'MedName3', 1000, 'description description, descriptrion', 3),
+	(1, 'MedName4', 1000, 'description description, descriptrion', 4),
+	(1, 'MedName5', 1000, 'description description, descriptrion', 5)
 ;
 
 INSERT INTO 
@@ -105,19 +106,13 @@ VALUES
 ;
 
 INSERT INTO 
-#feedback(quality, feedback_comment, feedback_date)
-feedback(feedback_comment, feedback_date)
+feedback(quality, feedback_comment, feedback_date)
 VALUES
-#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-1'),
-#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-2'),
-#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-3'),
-#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-4'),
-#	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-5')
-    ("feedback comment feedback comment feedback comment ", '2017-06-1'),
-	("feedback comment feedback comment feedback comment ", '2017-06-2'),
-	("feedback comment feedback comment feedback comment ", '2017-06-3'),
-	("feedback comment feedback comment feedback comment ", '2017-06-4'),
-	("feedback comment feedback comment feedback comment ", '2017-06-5')
+	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-1'),
+	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-2'),
+	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-3'),
+	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-4'),
+	('GOOD', "feedback comment feedback comment feedback comment ", '2017-06-5')
 ;
 
 INSERT INTO

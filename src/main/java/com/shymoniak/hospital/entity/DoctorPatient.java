@@ -1,9 +1,7 @@
 package com.shymoniak.hospital.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.shymoniak.hospital.entity.embeddableclasses.DoctorPatientId;
 import lombok.*;
 
 import javax.persistence.*;
@@ -36,12 +34,13 @@ public class DoctorPatient {
         return doctorPatientId;
     }
 
-    @JsonBackReference
+
+//    @JsonBackReference
     public Patient getPatient() {
         return patient;
     }
 
-    @JsonBackReference
+//    @JsonBackReference
     public Doctor getDoctor() {
         return doctor;
     }

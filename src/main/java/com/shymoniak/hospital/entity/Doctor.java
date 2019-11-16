@@ -54,6 +54,7 @@ public class Doctor {
 //    @JsonManagedReference
     private List<DoctorPatient> patients = new ArrayList<>();
 
+
     public Long getDoctorId() {
         return doctorId;
     }

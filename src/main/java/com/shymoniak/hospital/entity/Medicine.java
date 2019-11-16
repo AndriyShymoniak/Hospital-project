@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Setter
 @ToString
@@ -18,6 +16,9 @@ public class Medicine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "medicine_id", nullable = false)
     private Long medicineId;
+
+    @Column(name = "analog_id")
+    private Long analogId;
 
     @Column(name = "price", nullable = false)
     private int price;
@@ -32,12 +33,12 @@ public class Medicine {
     @JoinColumn(name = "diagnosis_id")
     private Diagnosis diagnosis;
 
-    @OneToMany(
-            mappedBy = "diagnosis",
-            cascade = CascadeType.PERSIST,
-            orphanRemoval = true
-    )
-    private List<Medicine> analogMedicine = new ArrayList<>();
+//    @OneToMany(
+//            mappedBy = "diagnosis",
+//            cascade = CascadeType.PERSIST,
+//            orphanRemoval = true
+//    )
+//    private List<Medicine> analogMedicine = new ArrayList<>();
 
     public Long getMedicineId() {
         return medicineId;
@@ -55,12 +56,12 @@ public class Medicine {
         return description;
     }
 
+    public Long getAnalogId() {
+        return analogId;
+    }
+
     @JsonBackReference
     public Diagnosis getDiagnosis() {
         return diagnosis;
-    }
-
-    public List<Medicine> getAnalogMedicine() {
-        return analogMedicine;
     }
 }

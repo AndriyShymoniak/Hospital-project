@@ -19,9 +19,7 @@ public class DiagnosisDTO {
     private String description;
     private Date diagnosisDate;
 
-    @JsonIgnore
     private DoctorDTO doctor;
-    @JsonIgnore
     private PatientDTO patient;
     private FeedbackDTO feedback;
     private List<MedicineDTO> medicines;
