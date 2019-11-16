@@ -2,7 +2,6 @@ package com.shymoniak.hospital.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;

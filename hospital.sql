@@ -49,7 +49,7 @@ CREATE TABLE diagnosis (
 );
 
 CREATE TABLE doctor_patient (
-	doctor_patient_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+#	doctor_patient_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 #    doctor_patient_id INT PRIMARY KEY NOT NULL,
 	patient_id INT,
 	doctor_id INT

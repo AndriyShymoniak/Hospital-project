@@ -31,7 +31,7 @@ public class DiagnosisController {
     }
 
     @GetMapping("/id/{id}")
-    ResponseEntity<DiagnosisDTO> findDoctorById(@PathVariable ("id") Long id){
+    ResponseEntity<DiagnosisDTO> findDiagnosisById(@PathVariable ("id") Long id){
         return new ResponseEntity<>(diagnosisService.getDiagnosisById(id), HttpStatus.OK);
     }
 

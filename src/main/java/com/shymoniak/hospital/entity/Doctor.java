@@ -1,9 +1,7 @@
 package com.shymoniak.hospital.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,8 +47,6 @@ public class Doctor {
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-//    @JsonIgnoreProperties("patient")
-//    @JsonBackReference
     @JsonManagedReference
     private List<DoctorPatient> patients = new ArrayList<>();
 }
