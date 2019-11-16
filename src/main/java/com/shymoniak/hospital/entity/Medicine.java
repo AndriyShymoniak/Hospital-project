@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@Getter
 @Setter
 @ToString
 @NoArgsConstructor
@@ -31,37 +32,6 @@ public class Medicine {
 
     @ManyToOne
     @JoinColumn(name = "diagnosis_id")
-    private Diagnosis diagnosis;
-
-//    @OneToMany(
-//            mappedBy = "diagnosis",
-//            cascade = CascadeType.PERSIST,
-//            orphanRemoval = true
-//    )
-//    private List<Medicine> analogMedicine = new ArrayList<>();
-
-    public Long getMedicineId() {
-        return medicineId;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Long getAnalogId() {
-        return analogId;
-    }
-
     @JsonBackReference
-    public Diagnosis getDiagnosis() {
-        return diagnosis;
-    }
+    private Diagnosis diagnosis;
 }

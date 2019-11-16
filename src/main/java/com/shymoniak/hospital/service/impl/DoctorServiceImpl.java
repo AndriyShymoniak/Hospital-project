@@ -1,11 +1,7 @@
 package com.shymoniak.hospital.service.impl;
 
-import com.shymoniak.hospital.domain.DiagnosisDTO;
 import com.shymoniak.hospital.domain.DoctorDTO;
-import com.shymoniak.hospital.domain.PatientDTO;
-import com.shymoniak.hospital.entity.Diagnosis;
 import com.shymoniak.hospital.entity.Doctor;
-import com.shymoniak.hospital.repository.DiagnosisRepository;
 import com.shymoniak.hospital.repository.DoctorRepository;
 import com.shymoniak.hospital.service.DoctorService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
@@ -43,9 +39,4 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorDTOList;
     }
 
-//    @Override
-//    public List<PatientDTO> showAllPatientsByDoctorId(Long id) {
-//        List<PatientDTO> patientDTOList = modelMapper.mapAll(doctorRepository.getAllByDoctorId(id), PatientDTO.class);
-//        return patientDTOList;
-//    }
 }

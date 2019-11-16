@@ -1,11 +1,10 @@
 package com.shymoniak.hospital.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
 
+@Getter
 @Setter
 @ToString
 @NoArgsConstructor
@@ -18,30 +17,10 @@ public class DoctorPatient {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
-//    @JsonIgnoreProperties("patients")
-//    @JsonManagedReference
-//    @JsonBackReference
     private Patient patient;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
-//    @JsonIgnoreProperties("doctors")
-//    @JsonManagedReference
-//    @JsonBackReference
     private Doctor doctor;
 
-    public Long getDoctorPatientId() {
-        return doctorPatientId;
-    }
-
-
-//    @JsonBackReference
-    public Patient getPatient() {
-        return patient;
-    }
-
-//    @JsonBackReference
-    public Doctor getDoctor() {
-        return doctor;
-    }
 }

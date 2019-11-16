@@ -1,9 +1,7 @@
 package com.shymoniak.hospital.service.impl;
 
-import com.shymoniak.hospital.domain.DiagnosisDTO;
-import com.shymoniak.hospital.domain.DoctorDTO;
+
 import com.shymoniak.hospital.domain.FeedbackDTO;
-import com.shymoniak.hospital.entity.Diagnosis;
 import com.shymoniak.hospital.entity.Feedback;
 import com.shymoniak.hospital.repository.FeedbackRepository;
 import com.shymoniak.hospital.service.FeedbackService;
