@@ -1,9 +1,12 @@
 package com.shymoniak.hospital.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,8 +33,16 @@ public class Medicine {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "diagnosis_id")
-    @JsonBackReference
-    private Diagnosis diagnosis;
+    @OneToMany(
+            mappedBy = "diagnosis",
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    @JsonManagedReference
+    private List<MedicineDiagnosis> diagnoses = new ArrayList<>();
+//    @ManyToOne
+//    @JoinColumn(name = "diagnosis_id")
+//    @JsonBackReference
+//    private Diagnosis diagnosis;
 }

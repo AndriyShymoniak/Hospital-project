@@ -43,7 +43,16 @@ public class Diagnosis {
     @JoinColumn(name = "feedback_id")
     private Feedback feedback;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "diagnosis")
+    @OneToMany(
+            mappedBy = "medicine",
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
     @JsonManagedReference
-    private List<Medicine> medicines = new ArrayList<>();
+    private List<MedicineDiagnosis> medicines = new ArrayList<>();
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "diagnosis")
+//    @JsonManagedReference
+//    private List<Medicine> medicines = new ArrayList<>();
 }

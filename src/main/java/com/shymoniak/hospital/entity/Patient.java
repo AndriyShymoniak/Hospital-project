@@ -47,7 +47,6 @@ public class Patient {
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-
     @JsonManagedReference
     private List<DoctorPatient> doctors = new ArrayList<>();
 }

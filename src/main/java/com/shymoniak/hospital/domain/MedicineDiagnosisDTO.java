@@ -6,20 +6,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MedicineDTO {
-    private Long medicineId;
-    private Long analogId;
-    private int price;
-    private String name;
-    private String description;
+public class MedicineDiagnosisDTO {
+    private Long medicineDiagnosisId;
 
     @JsonIgnore
-    private List<MedicineDiagnosisDTO> diagnosis;
+    private DiagnosisDTO diagnosis;
+
+    private MedicineDTO medicine;
 }
