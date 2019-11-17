@@ -32,6 +32,11 @@ public class MedicineController {
         return new ResponseEntity<>(medicineService.showAllAnalogMedicines(analogId), HttpStatus.OK);
     }
 
+    @GetMapping("/id/{id}")
+    ResponseEntity<MedicineDTO> findMedicineById(@PathVariable ("id") Long id){
+        return new ResponseEntity<>(medicineService.getMedicineById(id), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Void> addMedicine(@RequestBody MedicineDTO medicineDTO) {
         medicineService.addMedicine(medicineDTO);

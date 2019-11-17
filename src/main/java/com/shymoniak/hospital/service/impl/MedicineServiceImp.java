@@ -42,6 +42,11 @@ public class MedicineServiceImp implements MedicineService {
     }
 
     @Override
+    public MedicineDTO getMedicineById(Long id) {
+        return modelMapper.map(medicineRepository.getOne(id), MedicineDTO.class);
+    }
+
+    @Override
     public MedicineDTO getDiagnosisById(Long id) {
         return modelMapper.map(medicineRepository.getOne(id), MedicineDTO.class);
     }
