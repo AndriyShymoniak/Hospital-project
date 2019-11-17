@@ -30,15 +30,15 @@ public class DiagnosisController {
         return new ResponseEntity<>(diagnosisService.showAllDiagnosis(), HttpStatus.OK);
     }
 
-//    @GetMapping("/docId/{docId}")
-//    ResponseEntity<List<DiagnosisDTO>> findDiagnosisByDoctorId(@PathVariable ("docId") Long docId){
-//        return new ResponseEntity<>(diagnosisService.showAllDiagnosisByDoctorId(docId), HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/patId/{patId}")
-//    ResponseEntity<List<DiagnosisDTO>> findDiagnosisByPatientId(@PathVariable ("patId") Long patId){
-//        return new ResponseEntity<>(diagnosisService.showAllDiagnosisByPatientId(patId), HttpStatus.OK);
-//    }
+    @GetMapping("/docId/{docId}")
+    ResponseEntity<List<DiagnosisDTO>> findDiagnosisByDoctorId(@PathVariable ("docId") Long docId){
+        return new ResponseEntity<>(diagnosisService.showAllDiagnosisByDoctorId(docId), HttpStatus.OK);
+    }
+
+    @GetMapping("/patId/{patId}")
+    ResponseEntity<List<DiagnosisDTO>> findDiagnosisByPatientId(@PathVariable ("patId") Long patId){
+        return new ResponseEntity<>(diagnosisService.showAllDiagnosisByPatientId(patId), HttpStatus.OK);
+    }
 
     @GetMapping("/id/{id}")
     ResponseEntity<DiagnosisDTO> findDiagnosisById(@PathVariable ("id") Long id){
