@@ -42,7 +42,7 @@ public class Doctor {
     private Date birthDate;
 
     @OneToMany(
-            mappedBy = "patient",
+            mappedBy = "doctor",
             cascade = CascadeType.PERSIST,
             orphanRemoval = true,
             fetch = FetchType.LAZY

@@ -44,13 +44,13 @@ public class Diagnosis {
     private Feedback feedback;
 
     @OneToMany(
-            mappedBy = "medicine",
+            mappedBy = "diagnosis",
             cascade = CascadeType.PERSIST,
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
     @JsonManagedReference
-    private List<MedicineDiagnosis> medicines = new ArrayList<>();
+    private List<DiagnosisMedicine> medicines = new ArrayList<>();
 
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "diagnosis")
 //    @JsonManagedReference

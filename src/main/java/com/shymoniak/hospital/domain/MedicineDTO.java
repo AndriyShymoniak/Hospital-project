@@ -21,5 +21,5 @@ public class MedicineDTO {
     private String description;
 
     @JsonIgnore
-    private List<MedicineDiagnosisDTO> diagnosis;
+    private List<DiagnosisMedicineDTO> diagnoses;
 }

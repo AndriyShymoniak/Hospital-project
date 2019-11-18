@@ -22,5 +22,5 @@ public class DiagnosisDTO {
     private PatientDTO patient;
     private FeedbackDTO feedback;
 
-    private List<MedicineDiagnosisDTO> medicines;
+    private List<DiagnosisMedicineDTO> medicines;
 }

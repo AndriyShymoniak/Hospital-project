@@ -1,6 +1,5 @@
 package com.shymoniak.hospital.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
@@ -34,13 +33,13 @@ public class Medicine {
     private String description;
 
     @OneToMany(
-            mappedBy = "diagnosis",
+            mappedBy = "medicine",
             cascade = CascadeType.PERSIST,
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
     @JsonManagedReference
-    private List<MedicineDiagnosis> diagnoses = new ArrayList<>();
+    private List<DiagnosisMedicine> diagnoses = new ArrayList<>();
 //    @ManyToOne
 //    @JoinColumn(name = "diagnosis_id")
 //    @JsonBackReference

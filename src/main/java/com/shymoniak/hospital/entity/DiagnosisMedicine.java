@@ -10,10 +10,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "medicine_diagnosis")
-public class MedicineDiagnosis {
+@Table(name = "diagnosis_medicine")
+public class DiagnosisMedicine {
     @Id
-    private Long medicineDiagnosisId;
+    private Long diagnosisMedicineId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medicine_id")

@@ -56,11 +56,12 @@ CREATE TABLE doctor_patient (
 	doctor_id INT
 );
 
-CREATE TABLE medicine_diagnosis (
-	medicine_diagnosis_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE diagnosis_medicine (
+	diagnosis_medicine_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 #    doctor_patient_id INT PRIMARY KEY NOT NULL,
-	medicine_id INT,
-	diagnosis_id INT
+	diagnosis_id INT,
+    medicine_id INT
+	
 );
 
 CREATE TABLE feedback (
@@ -240,14 +241,14 @@ VALUES
 	('Грип', '2019-07-12', "description description description", 2, 4, 2),
 	('Застуда', '2019-07-12', "description description description", 3, 8, 3),
 	('Розлад шлунку', '2019-07-12', "description description description", 4, 15, 4),
-	('Гепатит', '2019-07-12', "description description description", 1, 20, 5),
+	('Гепатит', '2019-07-12', "description description description", 12, 20, 5),
 	('Грип', '2019-07-12', "description description description", 1, 4, 6),
 	('Застуда', '2019-07-12', "description description description", 4, 11, 7),
-	('Закреп', '2019-07-12', "description description description", 4, 2, 8),
+	('Закреп', '2019-07-12', "description description description", 12, 2, 8),
 	('Туберкульоз', '2019-07-12', "description description description", 3, 8, 9),
 	('Плоскостопість', '2019-07-12', "description description description", 3, 11, 10),
 
-	('Застуда', '2019-07-12', "description description description", 4, 11, 11),
+	('Застуда', '2019-07-12', "description description description", 12, 11, 11),
 	('Бронхіт', '2019-07-12', "description description description", 6, 10, 12),
 	('Гепатит', '2019-07-12', "description description description", 7, 13, 13),
 	('Розлад шлунку', '2019-07-12', "description description description", 8, 15, 14),
@@ -255,14 +256,14 @@ VALUES
 	('Грип', '2019-07-12', "description description description", 9, 6, 16),
 	('Плоскостопість', '2019-07-12', "description description description", 8, 18, 17),
 	('Бронхіт', '2019-07-12', "description description description", 5, 12, 18),
-	('Закреп', '2019-07-12', "description description description", 9, 16, 19),
+	('Закреп', '2019-07-12', "description description description", 12, 16, 19),
 	('Застуда', '2019-07-12', "description description description", 5, 4, 20),
 
 	('Чума', '2019-07-12', "Остання 6 стадія чуми. Гострий біль в пятках та у носі.", 4, 15, 21),
 	('Грип', '2019-07-12', "description description description", 10, 10, 22),
 	('Гепатит', '2019-07-12', "description description description", 11, 19, 23),
 	('Вітрянка', '2019-07-12', "description description description", 4, 4, 24),
-	('Серцева недостатність', '2019-07-12', "description description description", 2, 7, 25),
+	('Серцева недостатність', '2019-07-12', "description description description", 12, 7, 25),
 	('Плоскостопість', '2019-07-12', "description description description", 2, 14, 26),
 	('Туберкульоз', '2019-07-12', "description description description", 1, 17, 27),
 	('Закреп', '2019-07-12', "description description description", 2, 3, 28),
@@ -277,12 +278,12 @@ VALUES
 	('Чума', '2019-07-12', "Остання 6 стадія чуми. Гострий біль в пятках та у носі.", 4, 20, 36),
 	('Розлад шлунку', '2019-07-12', "description description description", 7, 14, 37),
 	('Вітрянка', '2019-07-12', "description description description", 5, 4, 38),
-	('Туберкульоз', '2019-07-12', "description description description", 9, 12, 39),
+	('Туберкульоз', '2019-07-12', "description description description", 12, 12, 39),
 	('Бронхіт', '2019-07-12', "description description description", 9, 9, 40 ),
 
 	('Плоскостопість', '2019-07-12', "description description description", 1, 5, 41),
 	('Туберкульоз', '2019-07-12', "description description description", 7, 7, 42),
-	('Туберкульоз', '2019-07-12', "description description description", 4, 8, 43),
+	('Туберкульоз', '2019-07-12', "description description description", 12, 8, 43),
 	('Вітрянка', '2019-07-12', "description description description", 8, 16, 44),
 	('Вітрянка', '2019-07-12', "description description description", 9, 9, 45),
 	('Плоскостопість', '2019-07-12', "description description description", 7, 10, 46),
@@ -398,7 +399,7 @@ VALUES
 ;
 
 INSERT INTO
-medicine_diagnosis (diagnosis_id, medicine_id)
+diagnosis_medicine (diagnosis_id, medicine_id)
 VALUES
 (1, 2),
 (1, 10),

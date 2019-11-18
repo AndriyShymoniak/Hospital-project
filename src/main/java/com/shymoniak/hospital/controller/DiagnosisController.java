@@ -42,6 +42,7 @@ public class DiagnosisController {
 
     @GetMapping("/id/{id}")
     ResponseEntity<DiagnosisDTO> findDiagnosisById(@PathVariable ("id") Long id){
+//        diagnosisService.getDiagnosisById(id).getMedicines().forEach(e -> System.out.println(e.getMedicine().getName()));
         return new ResponseEntity<>(diagnosisService.getDiagnosisById(id), HttpStatus.OK);
     }
 

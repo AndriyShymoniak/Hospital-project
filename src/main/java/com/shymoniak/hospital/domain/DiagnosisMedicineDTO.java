@@ -10,11 +10,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MedicineDiagnosisDTO {
-    private Long medicineDiagnosisId;
+public class DiagnosisMedicineDTO {
+    private Long diagnosisMedicineId;
+    
+    private MedicineDTO medicine;
 
     @JsonIgnore
     private DiagnosisDTO diagnosis;
 
-    private MedicineDTO medicine;
 }
