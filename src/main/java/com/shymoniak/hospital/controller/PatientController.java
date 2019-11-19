@@ -44,4 +44,10 @@ public class PatientController {
         patientService.addPatient(patientDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/delete/{deleteId}")
+    public ResponseEntity<Void> deleteDoctorById(@PathVariable ("deleteId") Long deleteId){
+        patientService.deletePatient(deleteId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

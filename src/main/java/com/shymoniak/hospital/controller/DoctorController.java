@@ -42,4 +42,10 @@ public class DoctorController {
         doctorService.addDoctor(doctorDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/delete/{deleteId}")
+    public ResponseEntity<Void> deleteDoctorById(@PathVariable ("deleteId") Long deleteId){
+        doctorService.deleteDoctor(deleteId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
