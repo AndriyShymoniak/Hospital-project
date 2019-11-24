@@ -21,6 +21,7 @@ public class DoctorDTO {
     private String emailAddress;
     private String speciality;
     private Date birthDate;
+    private String password;
 
     private List<DoctorPatientDTO> patients;
 }

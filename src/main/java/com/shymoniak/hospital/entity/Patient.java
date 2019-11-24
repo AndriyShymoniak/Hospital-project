@@ -41,6 +41,10 @@ public class Patient {
     @Column(name = "birth_date")
     private Date birthDate;
 
+    @Column(name = "patient_password")
+    private String password;
+
+
     @OneToMany(
             mappedBy = "patient",
             cascade = CascadeType.PERSIST,
