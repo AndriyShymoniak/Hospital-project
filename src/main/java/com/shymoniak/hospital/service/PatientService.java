@@ -12,4 +12,5 @@ public interface PatientService {
     List<PatientDTO> showAllPatientsBySurname(String lastName);
     PatientDTO findPatientById(Long id);
     PatientDTO findPatientByEmail(String email);
+    String signin(String email, String password);
 }

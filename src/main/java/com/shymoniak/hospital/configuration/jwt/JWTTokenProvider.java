@@ -24,8 +24,8 @@ public class JWTTokenProvider {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    public String createToken(String username, UserRole role) {
-        Claims claims = Jwts.claims().setSubject(username);
+    public String createToken(String email, UserRole role) {
+        Claims claims = Jwts.claims().setSubject(email);
         claims.put("auth", AuthorityUtils.createAuthorityList(String.valueOf(role)));
 
         Date now = new Date();
@@ -40,11 +40,11 @@ public class JWTTokenProvider {
     }
 
     public Authentication getAuthentication(String token) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(getUsername(token));
+        UserDetails userDetails = userDetailsService.loadUserByUsername(getEmail(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
-    public String getUsername(String token) {
+    public String getEmail(String token) {
         return Jwts.parser().setSigningKey(TOKEN_SECRET).parseClaimsJws(token).getBody().getSubject();
     }
 

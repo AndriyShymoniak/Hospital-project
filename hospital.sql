@@ -14,7 +14,8 @@ CREATE TABLE doctor (
 	email_address VARCHAR(100),
 	speciality VARCHAR(100) NOT NULL,
 	birth_date DATE,
-    doctor_password VARCHAR(50)
+    doctor_password VARCHAR(50),
+    role VARCHAR(30)
 #	patient_id INT
 );
 
@@ -27,7 +28,8 @@ CREATE TABLE patient (
 	email_address VARCHAR(100),
 	address VARCHAR(100),
 	birth_date DATE,
-    patient_password VARCHAR(50)
+    patient_password VARCHAR(50),
+    role VARCHAR(30)
 #	doctor_id INT
 );
 

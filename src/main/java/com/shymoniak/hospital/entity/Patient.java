@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Builder
 @Getter
 @Setter
 @ToString
@@ -45,6 +46,7 @@ public class Patient {
     @Column(name = "patient_password")
     private String password;
 
+    @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private UserRole role;
 

@@ -45,6 +45,7 @@ public class Doctor {
     @Column(name = "doctor_password")
     private String password;
 
+    @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private UserRole role;
 

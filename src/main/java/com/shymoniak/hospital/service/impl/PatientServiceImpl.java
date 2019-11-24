@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.service.impl;
 
+import com.shymoniak.hospital.configuration.jwt.JWTTokenProvider;
 import com.shymoniak.hospital.domain.PatientDTO;
 import com.shymoniak.hospital.entity.Patient;
 import com.shymoniak.hospital.entity.enums.UserRole;
@@ -7,6 +8,8 @@ import com.shymoniak.hospital.repository.PatientRepository;
 import com.shymoniak.hospital.service.PatientService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,11 +26,18 @@ public class PatientServiceImpl implements PatientService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JWTTokenProvider jwtTokenProvider;
+
     @Override
     public void addPatient(PatientDTO patientDTO) {
         patientDTO.setRole(UserRole.ROLE_USER_PATIENT);
         System.out.println("Password = " + patientDTO.getPassword());
         patientDTO.setPassword(passwordEncoder.encode(patientDTO.getPassword()));
+        System.out.println("Password hashed = " + patientDTO.getPassword());
         patientRepository.save(modelMapper.map(patientDTO, Patient.class));
     }
 
@@ -55,6 +65,15 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDTO findPatientByEmail(String email) {
-        return modelMapper.map(patientRepository.findByEmailAddress(email), PatientDTO.class);
+        return modelMapper.map(patientRepository.findByEmailAddressEquals(email), PatientDTO.class);
+    }
+
+    @Override
+    public String signin(String email, String password) {
+        System.out.println(">>> " + email);
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
+        System.out.println(">>> " + email);
+
+        return jwtTokenProvider.createToken(email, patientRepository.findByEmailAddressEquals(email).getRole());
     }
 }

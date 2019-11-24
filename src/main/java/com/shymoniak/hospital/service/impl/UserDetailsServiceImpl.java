@@ -18,12 +18,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Patient patient = patientRepository.findByEmailAddress(email);
+        Patient patient = patientRepository.findByEmailAddressEquals(email);
         if(patient == null) {
             throw new UsernameNotFoundException("User with email '" + email + "' not found");
         }
 
-        return User
+         return User
                 .builder()
                     .username(patient.getEmailAddress())
                     .password(patient.getPassword())
