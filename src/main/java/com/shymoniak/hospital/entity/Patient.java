@@ -1,6 +1,7 @@
 package com.shymoniak.hospital.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.shymoniak.hospital.entity.enums.UserRole;
 import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -43,6 +44,9 @@ public class Patient {
 
     @Column(name = "patient_password")
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
 
     @OneToMany(

@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.domain;
 
+import com.shymoniak.hospital.entity.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class DoctorDTO {
     private String speciality;
     private Date birthDate;
     private String password;
+    private UserRole role;
 
     private List<DoctorPatientDTO> patients;
 }

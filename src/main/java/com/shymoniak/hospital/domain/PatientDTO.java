@@ -1,6 +1,7 @@
 package com.shymoniak.hospital.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.shymoniak.hospital.entity.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class PatientDTO {
     private String emailAddress;
     private Date birthDate;
     private String password;
+    private UserRole role;
 
     @JsonIgnore
     private List<DoctorPatientDTO> doctors;
