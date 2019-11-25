@@ -1,5 +1,6 @@
 package com.shymoniak.hospital.service.impl;
 
+import com.shymoniak.hospital.configuration.jwt.JWTTokenProvider;
 import com.shymoniak.hospital.domain.DoctorDTO;
 import com.shymoniak.hospital.entity.Doctor;
 import com.shymoniak.hospital.entity.enums.UserRole;
@@ -7,6 +8,8 @@ import com.shymoniak.hospital.repository.DoctorRepository;
 import com.shymoniak.hospital.service.DoctorService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,12 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JWTTokenProvider jwtTokenProvider;
 
     @Override
     public void addDoctor(DoctorDTO doctorDTO) {
@@ -43,13 +52,22 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDTO getDoctorByEmail(String email) {
-        return modelMapper.map(doctorRepository.findByEmailAddress(email), DoctorDTO.class);
+        return modelMapper.map(doctorRepository.findByEmailAddressEquals(email), DoctorDTO.class);
     }
 
     @Override
     public List<DoctorDTO> showAllDoctors() {
         List<DoctorDTO> doctorDTOList = modelMapper.mapAll(doctorRepository.findAll(), DoctorDTO.class);
         return doctorDTOList;
+    }
+
+    @Override
+    public String signin(String email, String password) {
+        System.out.println(">>> " + email);
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
+        System.out.println(">>> " + email);
+
+        return jwtTokenProvider.createToken(email, doctorRepository.findByEmailAddressEquals(email).getRole());
     }
 
 }

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
-    Doctor findByEmailAddress(String email);
+    Doctor findByEmailAddressEquals(String email);
 }

@@ -11,4 +11,5 @@ public interface DoctorService {
     DoctorDTO getDoctorById(Long id);
     DoctorDTO getDoctorByEmail(String email);
     List<DoctorDTO> showAllDoctors();
+    String signin(String email, String password);
 }
