@@ -75,51 +75,51 @@ CREATE TABLE feedback (
     feedback_date DATE
 );
 
-# 13 records
+# 13 records pass = doctor
 INSERT INTO 
-doctor(first_name, middle_name, last_name , phone_number, email_address, speciality, birth_date, doctor_password)
+doctor(first_name, middle_name, last_name , phone_number, email_address, speciality, birth_date, doctor_password, role)
 VALUES
-	('Федір','Андрійович', 'Микитюк', '+38098581632', 'mykytiuk@mail.com', 'Сімейний лікар', '1974-05-21', "doctor"),
-	('Петро','Сергійович', 'Жук', '+38098581632', 'juk@mail.com', 'Сімейний лікар', '1970-07-01', "doctor"),
-	('Кирило','Романович', 'Боднаренко', '+380985559934', 'kir9bond@mail.com', 'Кардіолог', '1968-04-19', "doctor"),
-	('Валентина','Олексіївна', 'Іванченко', '+380985559934', 'ivanchenko@mail.com', 'Масажист', '1970-02-02', "doctor"),
-	('Валерій','Альбертович', 'Жмишенко', '+380985559934', 'mops69@mail.com', 'Проктолог', '1965-10-04', "doctor"),
-    ('Констянтин','Ярославович', 'Войтович', '+380985559934', 'yarik@mail.com', 'Хірург', '1981-08-17', "doctor"),
-    ('Дарія','Федорівна', 'Крамарчук', '+380985559934', 'kramar@mail.com', 'Отоларинолог', '1985-09-24', "doctor"),
-    ('Єва','Орестівна', 'Котік', '+380985559934', 'ave@mail.com', 'Психіатр', '1979-11-29', "doctor"),
-    ('Олександр','Олексанлрович', 'Шляпик', '+380985559934', 'sashkashlyapka@mail.com', 'Венеролог', '1978-10-01', "doctor"),
-    ('Денис','Петрович', 'Боров', '+380985559934', 'boroff@mail.com', 'Уролог', '1969-01-10', "doctor"),
+	('Федір','Андрійович', 'Микитюк', '+38098581632', 'mykytiuk@mail.com', 'Сімейний лікар', '1974-05-21', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+	('Кирило','Романович', 'Боднаренко', '+380985559934', 'kir9bond@mail.com', 'Кардіолог', '1968-04-19', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+	('Валентина','Олексіївна', 'Іванченко', '+380985559934', 'ivanchenko@mail.com', 'Масажист', '1970-02-02', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+	('Валерій','Альбертович', 'Жмишенко', '+380985559934', 'mops69@mail.com', 'Проктолог', '1965-10-04', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Констянтин','Ярославович', 'Войтович', '+380985559934', 'yarik@mail.com', 'Хірург', '1981-08-17', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Дарія','Федорівна', 'Крамарчук', '+380985559934', 'kramar@mail.com', 'Отоларинолог', '1985-09-24', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Єва','Орестівна', 'Котік', '+380985559934', 'ave@mail.com', 'Психіатр', '1979-11-29', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Олександр','Олексанлрович', 'Шляпик', '+380985559934', 'sashkashlyapka@mail.com', 'Венеролог', '1978-10-01', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Денис','Петрович', 'Боров', '+380985559934', 'boroff@mail.com', 'Уролог', '1969-01-10', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
 
-    ('Дмитро','Орестович', 'Урич', '+380985559934', 'dimaurich@mail.com', 'Психолог', '1990-03-03', "doctor"),
-    ('Ярема','Андрійович', 'Торч', '+38093101500', 'pisos420@mail.com', 'Нарколог', '1985-04-07', "doctor"),
-	('Єлизавета','Степанівна', 'Кравченко', '+380985559934', 'likar@mail.com', 'Дерматолог', '1987-05-13', "doctor")
+    ('Дмитро','Орестович', 'Урич', '+380985559934', 'dimaurich@mail.com', 'Психолог', '1990-03-03', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Ярема','Андрійович', 'Торч', '+38093101500', 'pisos420@mail.com', 'Нарколог', '1985-04-07', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+	('Єлизавета','Степанівна', 'Кравченко', '+380985559934', 'doctor@mail.com', 'Дерматолог', '1987-05-13', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Петро','Сергійович', 'Жук', '+38098581632', 'admin@mail.com', 'Головний лікар', '1970-07-01', "$2a$10$.YaSNm2IiKMFaxPUDLHHFOZEP7O6kAUBqsXO1rDba/mzh6BryIYJ.", "ROLE_ADMIN")
 ;
 
-# 20 records
+# 20 records pass = patient
 INSERT INTO 
 patient(first_name, middle_name, last_name , phone_number, email_address, address, birth_date, patient_password, role)
 VALUES
-	('Адам','Володимирович', 'Лисенко', '+380985559934', 'adam@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 10', '2070-03-14', "patient", "ROLE_USER_PATIENT"),
-	('Світлана','Романівна', 'Лисенко', '+380985559934', 'lissveta@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 10', '2075-02-05', "patient", "ROLE_USER_PATIENT"),
-	('Валерій','Адамович', 'Лисенко', '+380985559934', 'valavam@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 10', '2000-04-13', "patient", "ROLE_USER_PATIENT"),
-	('Олег','Євгенович', 'Монгол', '+380985559934', 'mongo@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 14', '1970-11-23', "patient", "ROLE_USER_PATIENT"),
-	('Павло','Євгенович', 'Монгол', '+380985559934', 'bezumniy@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 14', '1970-06-20', "patient", "ROLE_USER_PATIENT"),
-	('Ірина','Євгенівна', 'Монгол', '+380985559934', 'irishka@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 14', '1970-10-04', "patient", "ROLE_USER_PATIENT"),
-	('Раїса','Андріївна', 'Іванченко', '+380985559934', 'raya@mail.com', 'С. Мшана, Вул. Зелена, 21', '1984-09-08', "patient", "ROLE_USER_PATIENT"),
-	('Віталій','Олексадрович', 'Іванченко', '+380985559934', 'vitalekiva@mail.com', 'С. Мшана, Вул. Зелена, 21', '1984-02-03', "patient", "ROLE_USER_PATIENT"),
-	('Іван','Вікторович', 'Панасюк', '+380985559934', 'panos1@mail.com', 'С. Мшана, Вул. Зелена, 3', '1980-01-05', "patient", "ROLE_USER_PATIENT"),
-	('Софія','Віталіївна', 'Панасюк', '+380985559934', 'panosiuk@mail.com', 'С. Мшана, Вул. Зелена, 3', '1980-11-12', "patient", "ROLE_USER_PATIENT"),
+	('Адам','Володимирович', 'Лисенко', '+380985559934', 'adam@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 10', '2070-03-14', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Світлана','Романівна', 'Лисенко', '+380985559934', 'lissveta@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 10', '2075-02-05', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Валерій','Адамович', 'Лисенко', '+380985559934', 'valavam@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 10', '2000-04-13', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Олег','Євгенович', 'Монгол', '+380985559934', 'mongo@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 14', '1970-11-23', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Павло','Євгенович', 'Монгол', '+380985559934', 'bezumniy@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 14', '1970-06-20', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Ірина','Євгенівна', 'Монгол', '+380985559934', 'irishka@mail.com', 'С. Мшана, Вул. Тараса Шевченка, 14', '1970-10-04', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Раїса','Андріївна', 'Іванченко', '+380985559934', 'raya@mail.com', 'С. Мшана, Вул. Зелена, 21', '1984-09-08', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Віталій','Олексадрович', 'Іванченко', '+380985559934', 'vitalekiva@mail.com', 'С. Мшана, Вул. Зелена, 21', '1984-02-03', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Іван','Вікторович', 'Панасюк', '+380985559934', 'panos1@mail.com', 'С. Мшана, Вул. Зелена, 3', '1980-01-05', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Софія','Віталіївна', 'Панасюк', '+380985559934', 'panosiuk@mail.com', 'С. Мшана, Вул. Зелена, 3', '1980-11-12', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
 
-	('Анастасія','Олександрівна', 'Панасюк', '+380985559934', 'panya@mail.com', 'С. Мшана, Вул. Зелена, 3', '2001-12-12', "patient", "ROLE_USER_PATIENT"),
-	('Євгенія','Ростиславівна', 'Романченко', '+380985559934', 'jekaroma@mail.com', 'С. Мшана, Вул. Олександра Довженка, 8', '1987-03-20', "patient", "ROLE_USER_PATIENT"),
-	('Віктор','Олегович', 'Романченко', '+380985559934', 'vitya1@mail.com', 'С. Мшана, Вул. Олександра Довженка, 8', '1985-07-28', "patient", "ROLE_USER_PATIENT"),
-	('Лариса','Олександрівна', 'Гнатюк', '+380985559934', 'gnatiuklara@mail.com', 'С. Мшана, Вул. Олександра Довженка, 31', '1992-06-27', "patient", "ROLE_USER_PATIENT"),
-	('Наталія','Олександрівна', 'Гнатюк', '+380985559934', 'gnatiuknata@mail.com', 'С. Мшана, Вул. Олександра Довженка, 31', '1990-05-16', "patient", "ROLE_USER_PATIENT"),
-	('Борис','Арсентійович', 'Гнатюк', '+380985559934', 'bor9@mail.com', 'С. Мшана, Вул. Олександра Довженка, 31', '1999-02-19', "patient", "ROLE_USER_PATIENT"),
-	('Станіслав','Григорович', 'Стефанів', '+380985559934', 'stefka@mail.com', 'С. Мшана, Вул. Степана Бандери, 14', '1999-01-01', "patient", "ROLE_USER_PATIENT"),
-	('Микола','Володимирович', 'Вареник', '+380985559934', 'varenik@mail.com', 'С. Мшана, Вул. Степана Бандери, 37', '2000-10-07', "patient", "ROLE_USER_PATIENT"),
-	('Роман','Ігорович', 'Кацків', '+380985559934', 'pisooos@mail.com', 'С. Мшана, Вул. Степана Бандери, 14', '2000-11-15', "patient", "ROLE_USER_PATIENT"),
-	('Євгенія','Романівна', 'Петрунів', '+380985559934', 'patient1@mail.com', 'С. Мшана, Вул. Степана Бандери, 1', '1963-08-17', "patient", "ROLE_USER_PATIENT")
+	('Анастасія','Олександрівна', 'Панасюк', '+380985559934', 'panya@mail.com', 'С. Мшана, Вул. Зелена, 3', '2001-12-12', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Євгенія','Ростиславівна', 'Романченко', '+380985559934', 'jekaroma@mail.com', 'С. Мшана, Вул. Олександра Довженка, 8', '1987-03-20', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Віктор','Олегович', 'Романченко', '+380985559934', 'vitya1@mail.com', 'С. Мшана, Вул. Олександра Довженка, 8', '1985-07-28', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Лариса','Олександрівна', 'Гнатюк', '+380985559934', 'gnatiuklara@mail.com', 'С. Мшана, Вул. Олександра Довженка, 31', '1992-06-27', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Наталія','Олександрівна', 'Гнатюк', '+380985559934', 'gnatiuknata@mail.com', 'С. Мшана, Вул. Олександра Довженка, 31', '1990-05-16', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Борис','Арсентійович', 'Гнатюк', '+380985559934', 'bor9@mail.com', 'С. Мшана, Вул. Олександра Довженка, 31', '1999-02-19', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Станіслав','Григорович', 'Стефанів', '+380985559934', 'stefka@mail.com', 'С. Мшана, Вул. Степана Бандери, 14', '1999-01-01', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Микола','Володимирович', 'Вареник', '+380985559934', 'varenik@mail.com', 'С. Мшана, Вул. Степана Бандери, 37', '2000-10-07', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Роман','Ігорович', 'Кацків', '+380985559934', 'pisooos@mail.com', 'С. Мшана, Вул. Степана Бандери, 14', '2000-11-15', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT"),
+	('Євгенія','Романівна', 'Петрунів', '+380985559934', 'patient@mail.com', 'С. Мшана, Вул. Степана Бандери, 1', '1963-08-17', "$2a$10$8xOVr2WUo.36Du.d4rRiCO09vQX6etSRSbpWU/S0xpsfctu21OTlO", "ROLE_USER_PATIENT")
 ;
 
 # 25 records
