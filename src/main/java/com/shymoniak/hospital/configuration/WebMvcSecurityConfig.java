@@ -39,13 +39,14 @@ public class WebMvcSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-//        http.antMatcher("/auth/**").authorizeRequests().anyRequest().authenticated();
-
+        http.antMatcher("/cabinet/**").authorizeRequests().anyRequest().authenticated();
+//        http.authorizeRequests().antMatchers("/admin_page/").hasRole("ADMIN");
+//        http.authorizeRequests().antMatchers("/adminPage/**").hasRole("ADMIN");
 //        http.authorizeRequests()
 //                .antMatchers("/diagnosis/**").hasRole("USER_PATIENT");
 //
 //        http.authorizeRequests()
-//                .antMatchers("/admin/**").hasRole("ADMIN");
+//                .antMatchers("/admin_page/**").hasRole("ADMIN");
 //
 //        http.authorizeRequests()
 //                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
