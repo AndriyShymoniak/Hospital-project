@@ -40,6 +40,7 @@ public class AuthController {
     public ResponseEntity<SigninResponse> signin(@RequestBody SigninRequest request) {
         String token = patientService.signin(request.getUsername(), request.getPassword());
         String role = "";
+        Long id = patientService.findPatientByEmail(request.getUsername()).getPatientId();
         System.out.println(token + "\n" + request.getUsername() + "\n" + request.getPassword());
 
         if(token != null) {
@@ -47,21 +48,28 @@ public class AuthController {
             System.out.println("ROLE: " + role);
         }
 
-        return new ResponseEntity<>(new SigninResponse(token, role), HttpStatus.OK);
+        SigninResponse signinResponse = new SigninResponse(token, role, id);
+        System.out.println(signinResponse.getId() + " " + signinResponse.getRole());
+        return new ResponseEntity<>(signinResponse, HttpStatus.OK);
     }
 
     @PostMapping("signin/doctor")
     public ResponseEntity<SigninResponse> signinDoctor(@RequestBody SigninRequest request) {
         String token = doctorService.signin(request.getUsername(), request.getPassword());
         String role = "";
-        System.out.println(token + "\n" + request.getUsername() + "\n" + request.getPassword());
+        Long id = doctorService.getDoctorByEmail(request.getUsername()).getDoctorId();
+        System.out.println("id = " + id);
+        System.out.println(token + "\n" + request.getUsername() + "\n" + request.getPassword() + "\n id = " + id);
 
         if(token != null) {
             role = doctorService.getDoctorByEmail(request.getUsername()).getRole().toString();
             System.out.println("ROLE: " + role);
         }
 
-        return new ResponseEntity<>(new SigninResponse(token, role), HttpStatus.OK);
+        SigninResponse signinResponse = new SigninResponse(token, role, id);
+        System.out.println(signinResponse.getId() + " " + signinResponse.getRole());
+
+        return new ResponseEntity<>(signinResponse, HttpStatus.OK);
     }
 }
 

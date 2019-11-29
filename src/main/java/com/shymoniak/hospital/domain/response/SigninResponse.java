@@ -11,4 +11,5 @@ public class SigninResponse {
 
     private String token;
     private String role;
+    private Long id;
 }
