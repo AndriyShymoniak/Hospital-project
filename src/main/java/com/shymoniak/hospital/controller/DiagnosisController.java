@@ -4,10 +4,12 @@ package com.shymoniak.hospital.controller;
 import com.shymoniak.hospital.domain.DiagnosisDTO;
 import com.shymoniak.hospital.service.DiagnosisService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -38,6 +40,13 @@ public class DiagnosisController {
     @GetMapping("/patId/{patId}")
     ResponseEntity<List<DiagnosisDTO>> findDiagnosisByPatientId(@PathVariable ("patId") Long patId){
         return new ResponseEntity<>(diagnosisService.showAllDiagnosisByPatientId(patId), HttpStatus.OK);
+    }
+
+    @GetMapping("/dateFrom/{dateFrom}/dateTo/{dateTo}")
+    ResponseEntity<List<DiagnosisDTO>> findDiagnosisByDateBetween(
+            @PathVariable ("dateFrom") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)Date dateFrom,
+            @PathVariable ("dateTo") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateTo){
+        return new ResponseEntity<>(diagnosisService.showAllDiagnosisByDate(dateFrom, dateTo), HttpStatus.OK);
     }
 
     @GetMapping("/id/{id}")

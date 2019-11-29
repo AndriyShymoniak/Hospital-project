@@ -8,6 +8,7 @@ import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -54,6 +55,12 @@ public class DiagnosisServiceImpl implements DiagnosisService {
     @Override
     public List<DiagnosisDTO> showAllDiagnosisByPatientId(Long id) {
         List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findAllByPatientPatientId(id), DiagnosisDTO.class);
+        return diagnosisDTOList;
+    }
+
+    @Override
+    public List<DiagnosisDTO> showAllDiagnosisByDate(Date dateFrom, Date dateTo) {
+        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findByDiagnosisDateBetween(dateFrom, dateTo), DiagnosisDTO.class);
         return diagnosisDTOList;
     }
 
