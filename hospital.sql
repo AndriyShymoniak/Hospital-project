@@ -91,7 +91,9 @@ VALUES
 
     ('Дмитро','Орестович', 'Урич', '+380985559934', 'dimaurich@mail.com', 'Психолог', '1990-03-03', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
     ('Ярема','Андрійович', 'Торч', '+38093101500', 'pisos420@mail.com', 'Нарколог', '1985-04-07', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
-	('Єлизавета','Степанівна', 'Кравченко', '+380985559934', 'doctor@mail.com', 'Дерматолог', '1987-05-13', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Петро','Сергійович', 'Жук', '+38098581632', 'juk@mail.com', 'Головний лікар', '1970-07-01', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    ('Єлизавета','Степанівна', 'Кравченко', '+380985559934', 'doctor@mail.com', 'Дерматолог', '1987-05-13', "$2a$10$I61X.sazek6nQcp0WAdAs.1mvFsjObK7v1myFaVwmaIfh118nb2x2", "ROLE_USER_DOCTOR"),
+    
     ('Петро','Сергійович', 'Жук', '+38098581632', 'admin@mail.com', 'Головний лікар', '1970-07-01', "$2a$10$.YaSNm2IiKMFaxPUDLHHFOZEP7O6kAUBqsXO1rDba/mzh6BryIYJ.", "ROLE_ADMIN")
 ;
 
