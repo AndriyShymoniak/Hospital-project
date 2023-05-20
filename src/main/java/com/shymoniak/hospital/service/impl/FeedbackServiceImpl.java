@@ -1,23 +1,19 @@
 package com.shymoniak.hospital.service.impl;
 
-
 import com.shymoniak.hospital.domain.FeedbackDTO;
 import com.shymoniak.hospital.entity.Feedback;
 import com.shymoniak.hospital.repository.FeedbackRepository;
 import com.shymoniak.hospital.service.FeedbackService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class FeedbackServiceImpl implements FeedbackService {
-
-    @Autowired
     private FeedbackRepository feedbackRepository;
-
-    @Autowired
     private ObjectMapperUtils modelMapper;
 
     @Override

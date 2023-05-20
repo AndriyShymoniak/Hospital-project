@@ -5,19 +5,16 @@ import com.shymoniak.hospital.entity.Medicine;
 import com.shymoniak.hospital.repository.MedicineRepository;
 import com.shymoniak.hospital.service.MedicineService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class MedicineServiceImp implements MedicineService {
-    @Autowired
     private MedicineRepository medicineRepository;
-
-    @Autowired
     private ObjectMapperUtils modelMapper;
-
 
     @Override
     public void addMedicine(MedicineDTO medicineDTO) {

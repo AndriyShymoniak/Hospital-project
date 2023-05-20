@@ -51,8 +51,4 @@ public class Diagnosis {
     )
     @JsonManagedReference
     private List<DiagnosisMedicine> medicines = new ArrayList<>();
-
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "diagnosis")
-//    @JsonManagedReference
-//    private List<Medicine> medicines = new ArrayList<>();
 }

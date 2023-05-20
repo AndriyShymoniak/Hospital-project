@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum FeedbackQuality {
     GREAT("Відмінно"), GOOD("Добре"), SATISFACTORILY("Задовільно"),
         UNSATISFACTORILY("Незадовільно");
-    private String translation;
+    private final String translation;
 
     FeedbackQuality(String translation) {
         this.translation = translation;

@@ -4,7 +4,7 @@ import com.shymoniak.hospital.entity.Doctor;
 import com.shymoniak.hospital.entity.Patient;
 import com.shymoniak.hospital.repository.DoctorRepository;
 import com.shymoniak.hospital.repository.PatientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,14 +12,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service("userDetailsService")
+@AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
-
-    @Autowired
     private PatientRepository patientRepository;
-
-    @Autowired
     private DoctorRepository doctorRepository;
-
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

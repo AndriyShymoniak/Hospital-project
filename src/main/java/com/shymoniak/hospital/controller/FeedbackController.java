@@ -2,7 +2,7 @@ package com.shymoniak.hospital.controller;
 
 import com.shymoniak.hospital.domain.FeedbackDTO;
 import com.shymoniak.hospital.service.FeedbackService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,17 +17,17 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("feedback")
+@AllArgsConstructor
 public class FeedbackController {
-    @Autowired
     private FeedbackService feedbackService;
 
     @GetMapping({"", "/"})
-    ResponseEntity<List<FeedbackDTO>> showAllFeedbacks(){
+    public ResponseEntity<List<FeedbackDTO>> showAllFeedbacks(){
         return new ResponseEntity<>(feedbackService.showAllFeedbacks(), HttpStatus.OK);
     }
 
     @GetMapping("/id/{id}")
-    ResponseEntity<FeedbackDTO> findFeedbackrById(@PathVariable ("id") Long id){
+    public ResponseEntity<FeedbackDTO> findFeedbackrById(@PathVariable ("id") Long id){
         return new ResponseEntity<>(feedbackService.getFeedbackById(id), HttpStatus.OK);
     }
 
