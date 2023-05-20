@@ -7,7 +7,7 @@ import com.shymoniak.hospital.entity.enums.UserRole;
 import com.shymoniak.hospital.repository.PatientRepository;
 import com.shymoniak.hospital.service.PatientService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,20 +16,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PatientServiceImpl implements PatientService {
-    @Autowired
     private PatientRepository patientRepository;
-
-    @Autowired
     private ObjectMapperUtils modelMapper;
-
-    @Autowired
     private PasswordEncoder passwordEncoder;
-
-    @Autowired
     private AuthenticationManager authenticationManager;
-
-    @Autowired
     private JWTTokenProvider jwtTokenProvider;
 
     @Override

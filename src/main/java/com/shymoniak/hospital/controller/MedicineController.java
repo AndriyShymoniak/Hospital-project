@@ -2,7 +2,7 @@ package com.shymoniak.hospital.controller;
 
 import com.shymoniak.hospital.domain.MedicineDTO;
 import com.shymoniak.hospital.service.MedicineService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,22 +18,22 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("medicine")
+@AllArgsConstructor
 public class MedicineController {
-    @Autowired
     private MedicineService medicineService;
 
     @GetMapping({"", "/"})
-    ResponseEntity<List<MedicineDTO>> showAllMedicines(){
+    public ResponseEntity<List<MedicineDTO>> showAllMedicines(){
         return new ResponseEntity<>(medicineService.showAllMedicines(), HttpStatus.OK);
     }
 
     @GetMapping("/analogId/{analogId}")
-    ResponseEntity<List<MedicineDTO>> showAllAnalogMedicines(@PathVariable ("analogId") Long analogId){
+    public ResponseEntity<List<MedicineDTO>> showAllAnalogMedicines(@PathVariable ("analogId") Long analogId){
         return new ResponseEntity<>(medicineService.showAllAnalogMedicines(analogId), HttpStatus.OK);
     }
 
     @GetMapping("/id/{id}")
-    ResponseEntity<MedicineDTO> findMedicineById(@PathVariable ("id") Long id){
+    public ResponseEntity<MedicineDTO> findMedicineById(@PathVariable ("id") Long id){
         return new ResponseEntity<>(medicineService.getMedicineById(id), HttpStatus.OK);
     }
 

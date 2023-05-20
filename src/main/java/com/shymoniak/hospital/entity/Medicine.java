@@ -40,8 +40,4 @@ public class Medicine {
     )
     @JsonManagedReference
     private List<DiagnosisMedicine> diagnoses = new ArrayList<>();
-//    @ManyToOne
-//    @JoinColumn(name = "diagnosis_id")
-//    @JsonBackReference
-//    private Diagnosis diagnosis;
 }

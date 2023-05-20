@@ -7,7 +7,7 @@ import com.shymoniak.hospital.entity.enums.UserRole;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -19,9 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Component
+@AllArgsConstructor
 public class JWTTokenProvider {
-
-    @Autowired
     private UserDetailsService userDetailsService;
 
     public String createToken(String email, UserRole role) {
@@ -51,7 +50,7 @@ public class JWTTokenProvider {
     public String resolveToken(HttpServletRequest req) {
         String bearerToken = req.getHeader(HEADER_STRING);
         if(bearerToken != null && bearerToken.startsWith(TOKEN_PREFIX)) {
-            return bearerToken.substring(7, bearerToken.length());
+            return bearerToken.substring(7);
         }
         return null;
     }

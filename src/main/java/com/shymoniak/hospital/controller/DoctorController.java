@@ -1,9 +1,8 @@
 package com.shymoniak.hospital.controller;
 
 import com.shymoniak.hospital.domain.DoctorDTO;
-import com.shymoniak.hospital.domain.PatientDTO;
 import com.shymoniak.hospital.service.DoctorService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,22 +17,17 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("doctor")
+@AllArgsConstructor
 public class DoctorController {
-    @Autowired
     private DoctorService doctorService;
 
     @GetMapping({"", "/"})
-    ResponseEntity<List<DoctorDTO>> showAllDoctors(){
+    public ResponseEntity<List<DoctorDTO>> showAllDoctors(){
         return new ResponseEntity<>(doctorService.showAllDoctors(), HttpStatus.OK);
     }
 
-//    @GetMapping("/docId/{docId}")
-//    ResponseEntity<List<PatientDTO>> showAllPatientsByDoctorId(@PathVariable ("docId") Long id){
-//        return new ResponseEntity<>(doctorService.showAllPatientsByDoctorId(id), HttpStatus.OK);
-//    }
-
     @GetMapping("/id/{id}")
-    ResponseEntity<DoctorDTO> findDoctorById(@PathVariable ("id") Long id){
+    public ResponseEntity<DoctorDTO> findDoctorById(@PathVariable ("id") Long id){
         return new ResponseEntity<>(doctorService.getDoctorById(id), HttpStatus.OK);
     }
 

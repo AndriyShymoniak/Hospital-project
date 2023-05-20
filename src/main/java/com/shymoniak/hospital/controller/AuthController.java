@@ -6,7 +6,7 @@ import com.shymoniak.hospital.domain.request.SigninRequest;
 import com.shymoniak.hospital.domain.response.SigninResponse;
 import com.shymoniak.hospital.service.DoctorService;
 import com.shymoniak.hospital.service.PatientService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,24 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("auth")
+@AllArgsConstructor
 public class AuthController {
-
-    @Autowired
     private PatientService patientService;
-
-    @Autowired
     private DoctorService doctorService;
 
     @PostMapping("signup")
     public ResponseEntity<Void> registerUser(@RequestBody PatientDTO dto) {
         patientService.addPatient(dto);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("signup/doctor")
     public ResponseEntity<Void> registerDoctor(@RequestBody DoctorDTO dto) {
         doctorService.addDoctor(dto);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("signin")

@@ -5,19 +5,16 @@ import com.shymoniak.hospital.entity.Diagnosis;
 import com.shymoniak.hospital.repository.DiagnosisRepository;
 import com.shymoniak.hospital.service.DiagnosisService;
 import com.shymoniak.hospital.service.utils.ObjectMapperUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class DiagnosisServiceImpl implements DiagnosisService {
-
-    @Autowired
     private DiagnosisRepository diagnosisRepository;
-
-    @Autowired
     private ObjectMapperUtils modelMapper;
 
     @Override
@@ -42,26 +39,22 @@ public class DiagnosisServiceImpl implements DiagnosisService {
 
     @Override
     public List<DiagnosisDTO> showAllDiagnosis() {
-        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findAll(), DiagnosisDTO.class);
-        return diagnosisDTOList;
+        return modelMapper.mapAll(diagnosisRepository.findAll(), DiagnosisDTO.class);
     }
 
     @Override
     public List<DiagnosisDTO> showAllDiagnosisByDoctorId(Long id) {
-        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findAllByDoctorDoctorId(id), DiagnosisDTO.class);
-        return diagnosisDTOList;
+        return modelMapper.mapAll(diagnosisRepository.findAllByDoctorDoctorId(id), DiagnosisDTO.class);
     }
 
     @Override
     public List<DiagnosisDTO> showAllDiagnosisByPatientId(Long id) {
-        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findAllByPatientPatientId(id), DiagnosisDTO.class);
-        return diagnosisDTOList;
+        return modelMapper.mapAll(diagnosisRepository.findAllByPatientPatientId(id), DiagnosisDTO.class);
     }
 
     @Override
     public List<DiagnosisDTO> showAllDiagnosisByDate(Date dateFrom, Date dateTo) {
-        List<DiagnosisDTO> diagnosisDTOList = modelMapper.mapAll(diagnosisRepository.findByDiagnosisDateBetween(dateFrom, dateTo), DiagnosisDTO.class);
-        return diagnosisDTOList;
+        return modelMapper.mapAll(diagnosisRepository.findByDiagnosisDateBetween(dateFrom, dateTo), DiagnosisDTO.class);
     }
 
 }
